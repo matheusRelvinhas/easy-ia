@@ -1,6 +1,6 @@
 ---
 
-LINK PROJECT : https://matheusrelvinhas.github.io/{name: project}/
+LINK PROJECT : https://matheusrelvinhas.github.io/easy-ia/
 
 <p aling="center">
   <img src="public/assets/readme/app-gif-easy-ia.gif">
