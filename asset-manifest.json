@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/easy-ia/static/css/main.10b1352e.css",
+    "main.js": "/easy-ia/static/js/main.29b69b24.js",
+    "index.html": "/easy-ia/index.html",
+    "main.10b1352e.css.map": "/easy-ia/static/css/main.10b1352e.css.map",
+    "main.29b69b24.js.map": "/easy-ia/static/js/main.29b69b24.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.10b1352e.css",
+    "static/js/main.29b69b24.js"
+  ]
+}
