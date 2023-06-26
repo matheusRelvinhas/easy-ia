@@ -220,12 +220,13 @@ function App() {
   }, []);
 
   const handleSubmitKey = (event) => {
+    setshowUserForm(false);
     event.preventDefault();
     // Armazena a key no Local Storage
     localStorage.setItem('userKey', userKey);
     // Atualiza o estado com a key
     setSavedKey(userKey);
-    // Limpa o campo do formulário
+    
     setUserKey('');
   };
 
