@@ -281,7 +281,7 @@ function App() {
       <MyContext.Provider value={sharedData}>
         <BodyComponent backgroundColor={dataCss.secundaryColor} color={dataCss.fontColor} />
         <Routes>
-          <Route path='/' element={<HomePage />}/>
+          <Route path='/easy-ia' element={<HomePage />}/>
         </Routes>
       </MyContext.Provider>
     </Router>
