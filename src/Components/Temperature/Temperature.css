@@ -1,0 +1,12 @@
+.temperature {
+  position: relative;
+  display: grid;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.temperature-input {
+  width: 25vw;
+}

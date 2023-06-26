@@ -1,0 +1,12 @@
+.presence {
+  position: relative;
+  display: grid;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center
+}
+
+.presence-input {
+  width: 25vw;
+}

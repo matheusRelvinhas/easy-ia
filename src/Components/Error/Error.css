@@ -1,0 +1,8 @@
+.container-error {
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  height: 300px;
+  width: 300px;
+  background-color: aqua;
+}
