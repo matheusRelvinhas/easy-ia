@@ -25,7 +25,7 @@ const Chat = () => {
     handleSubmitKey,
     showError,
     errorMessage,
-    handleErrorCloseClick
+    handleErrorCloseClick,
   } = useContext(MyContext);
 
   return (
@@ -63,14 +63,14 @@ const Chat = () => {
           onChange={handleInputChange}
         />
         <div className="sidebar"></div>
-        <button type="submit" className="btn">
+        <button className="btn-header" id='btn-submit-form' type="submit">
           <strong>Send</strong>
-          <div id="container-stars">
-            <div id="stars"></div>
+          <div id="container-stars-header">
+            <div id="stars-header"></div>
           </div>
-          <div id="glow">
-            <div className="circle"></div>
-            <div className="circle"></div>
+          <div id="glow-header">
+            <div className="circle-header"></div>
+            <div className="circle-header"></div>
           </div>
         </button>
       </form>
@@ -107,7 +107,7 @@ const Chat = () => {
             </button>
           </form>
           <form className="form-user-key" onSubmit={handleSubmitKey}>
-            <label className='user-key'>
+            <label className="user-key">
               <ClosedCaption text="" />
               <a
                 href="https://platform.openai.com/account/api-keys"
@@ -115,7 +115,7 @@ const Chat = () => {
               >
                 <strong>User Key</strong>
               </a>
-              <ClosedCaption text='Click no link e gere sua key, será salva em local storage, não compartilhe com ninguém, se tiver com problemas na key gera uma nova no link e atualize aqui'/>
+              <ClosedCaption text="Click no link e gere sua key, será salva em local storage, não compartilhe com ninguém, se tiver com problemas na key gera uma nova no link e atualize aqui" />
             </label>
             <input
               type="text"
