@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/easy-ia/static/css/main.e21204ef.css",
-    "main.js": "/easy-ia/static/js/main.688f551f.js",
+    "main.css": "/easy-ia/static/css/main.e7c5bcbd.css",
+    "main.js": "/easy-ia/static/js/main.54dba9b7.js",
     "index.html": "/easy-ia/index.html",
-    "main.e21204ef.css.map": "/easy-ia/static/css/main.e21204ef.css.map",
-    "main.688f551f.js.map": "/easy-ia/static/js/main.688f551f.js.map"
+    "main.e7c5bcbd.css.map": "/easy-ia/static/css/main.e7c5bcbd.css.map",
+    "main.54dba9b7.js.map": "/easy-ia/static/js/main.54dba9b7.js.map"
   },
   "entrypoints": [
-    "static/css/main.e21204ef.css",
-    "static/js/main.688f551f.js"
+    "static/css/main.e7c5bcbd.css",
+    "static/js/main.54dba9b7.js"
   ]
 }
