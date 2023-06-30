@@ -7,13 +7,13 @@
   .loading-square {
     width: 8px;
     height: 30px;
-    background: rgb(71, 195, 248);
+    background: #1677ff;
     border-radius: 10px;
     display: block;
     /*margin:10px;*/
     -webkit-animation: turn 2.5s ease infinite;
     animation: turn 2.5s ease infinite;
-    box-shadow: rgb(71, 195, 248) 0px 1px 15px 0px;
+    box-shadow: #1677ff 0px 1px 15px 0px;
   }
   
   .loading-top {

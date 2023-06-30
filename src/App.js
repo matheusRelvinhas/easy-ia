@@ -50,7 +50,7 @@ function App() {
   };
   const [personaList, setPersonaList] = useState([]);
   
-  //const keyUser = `Bearer ${savedKey}`;
+  const keyUser = `Bearer ${savedKey}`;
   const systemContent = `Você é ${personaBot.personaName}`
   
   const [persona, setPersona] = useState(personaBot)
@@ -94,12 +94,6 @@ function App() {
     return () => clearTimeout(timer);
   }, [showMessage]);
   
-  const userE = 'sk-RbQiY74vwX';
-  const userA = 'SaX9IhsZ04';
-  const userS = 'T3BlbkFJlJXkgc';
-  const userY = 'gMb91aarNoHXIK';
-  const IA = userE+userA+userS+userY
-  const keyUser = `Bearer ${IA}`;
 
 // funções do chat, butão de envio
   const sendMessage = async () => {

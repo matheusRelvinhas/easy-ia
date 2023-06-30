@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import MyContext from '../../Context/MyContext';
-//import ClosedCaption from '../ClosedCaption/ClosedCaption';
+import ClosedCaption from '../ClosedCaption/ClosedCaption';
 import './UserForm.css';
 
 const UserForm = () => {
@@ -11,10 +11,10 @@ const UserForm = () => {
     savedUser,
     setUserName,
     handleSubmitUser,
-    //userKey,
-    //savedKey,
-    //setUserKey,
-    //handleSubmitKey,
+    userKey,
+    savedKey,
+    setUserKey,
+    handleSubmitKey,
     showError,
     errorMessage,
     handleErrorCloseClick,
@@ -42,7 +42,7 @@ const UserForm = () => {
               <span>Send user name</span>
             </button>
           </form>
-          {/*<form className="form-user-key" onSubmit={handleSubmitKey}>
+          <form className="form-user-key" onSubmit={handleSubmitKey}>
             <label className="user-key">
               <ClosedCaption text="" />
               <a
@@ -63,7 +63,7 @@ const UserForm = () => {
             <button className="button-user" type="submit">
               <span>Send user key</span>
             </button>
-          </form>*/}
+          </form>
         </div>
       )}
       {showError && (
