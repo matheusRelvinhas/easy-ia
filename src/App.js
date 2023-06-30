@@ -25,7 +25,7 @@ function App() {
   const [isTokensEnabled, setIsTokensEnabled] = useState(false);
   const [tokenValue, setTokenValue] = useState(null);
   const [contextPrompt, setContextPrompt] = useState('');
-  const [showUserForm, setshowUserForm] = useState(false);
+  const [showUserForm, setShowUserForm] = useState(false);
   const [userName, setUserName] = useState('');
   const [userKey, setUserKey] = useState();
   const [savedUser, setSavedUser] = useState('user');
@@ -236,11 +236,15 @@ function App() {
 
   // funções tela User, user e key
   const handleUserButtonClick = () => {
-    setshowUserForm(true);
+    if (showUserForm) {
+      setShowUserForm(false);
+    } else if (!showUserForm) {
+      setShowUserForm(true);
+    }
   };
 
   const handleUserCloseClick = () => {
-    setshowUserForm(false);
+    setShowUserForm(false);
   };
 
   const handleSubmitUser = (event) => {
@@ -259,7 +263,7 @@ function App() {
     localStorage.setItem('userKey', userKey);
     // Atualiza o estado com a key
     setSavedKey(userKey);
-    setshowUserForm(false);
+    setShowUserForm(false);
     setUserKey('');
   };
 
@@ -269,8 +273,9 @@ function App() {
 
   // funções persona, name, descrição, humor, local, obs
   const handlePersonaButtonClick = () => {
-    if (showPersonaForm) {
+    if (showPersonaForm || showPersonaList) {
       setShowPersonaForm(false);
+      setShowPersonaList(false)
     } else if (!showPersonaForm) {
       setShowPersonaForm(true);
     }
@@ -348,7 +353,7 @@ function App() {
         setIsOpen(false);
         setShowPersonaForm(false);
         setShowPersonaList(false);
-        handleUserCloseClick();
+        setShowUserForm(false);
       }
     };
     document.addEventListener('keydown', handleEscDown);

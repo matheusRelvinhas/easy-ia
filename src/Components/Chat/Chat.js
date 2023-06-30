@@ -63,7 +63,6 @@ const Chat = () => {
             className="button-persona"
             type="button"
             onClick={handlePersonaButtonClick}
-            style={{boxShadow: dataCss.boxShadowFooter}}
           >
             <span>Persona</span>
           </button>
@@ -73,7 +72,7 @@ const Chat = () => {
         </div>
       </form>
       {showMessage && (
-        <div className="message-container">
+        <div className="message-container div-shadow">
           <div className="message-text">Escreva algo</div>
         </div>
       )}
