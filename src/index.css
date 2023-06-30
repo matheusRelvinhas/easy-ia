@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -19,9 +22,14 @@ a, Link {
 }
 
 * {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Roboto', sans-serif;
   font-size:large;
   color: #f0f0f0;
+}
+
+button span {
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.75vw;
 }
 
 button {

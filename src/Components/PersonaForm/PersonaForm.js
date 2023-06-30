@@ -52,7 +52,8 @@ const PersonaForm = () => {
               value={personaForm.descriptionPersona}
               onChange={(event) => setPersonaForm({ ...personaForm, descriptionPersona: event.target.value })}
               placeholder='Descrição do personagem, ex: Gandalf é um poderoso mago, sábio e guerreiro, conhecido por seu chapéu cinzento.'
-            />
+              required
+           />
             <button className="button-persona-form" type="submit">
               <span>Send persona</span>
             </button>

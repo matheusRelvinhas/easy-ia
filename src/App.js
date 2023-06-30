@@ -69,8 +69,8 @@ function App() {
     logoImage: [
       './img/easy-ia-logo.png',
       './img/easy-ia-logo.webp',
-      'https://i.postimg.cc/d31GghxF/easy-ia-logo.png',
-      'https://i.postimg.cc/bJLQ6xLL/easy-ia-logo.webp',
+      'https://i.postimg.cc/gkryRqsX/easy-ia-logo.png',
+      'https://i.postimg.cc/pVsYp1fM/easy-ia-logo.webp',
     ],
   };
 
