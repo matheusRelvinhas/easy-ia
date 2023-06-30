@@ -15,7 +15,7 @@ const PersonaForm = () => {
   return (
     <>
       {showPersonaForm && (
-        <div className="form-persona-container">
+        <div className="form-persona-container div-shadow">
           <div className="close" onClick={handlePersonaCloseClick}>
             x
           </div>

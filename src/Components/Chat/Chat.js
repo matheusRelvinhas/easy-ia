@@ -15,6 +15,7 @@ const Chat = () => {
     showMessage,
     handlePersonaButtonClick,
     personaBot,
+    dataCss
   } = useContext(MyContext);
 
   return (
@@ -49,6 +50,7 @@ const Chat = () => {
       </div>
       <form className="chat-input-container" onSubmit={handleSubmit}>
         <textarea
+          style={{boxShadow: dataCss.boxShadowFooter}}
           type="text"
           value={prompt}
           onKeyDown={handleKeyDown}
@@ -61,6 +63,7 @@ const Chat = () => {
             className="button-persona"
             type="button"
             onClick={handlePersonaButtonClick}
+            style={{boxShadow: dataCss.boxShadowFooter}}
           >
             <span>Persona</span>
           </button>

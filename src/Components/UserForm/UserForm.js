@@ -23,7 +23,7 @@ const UserForm = () => {
   return (
     <>
       {showUserForm && (
-        <div className="form-user-container">
+        <div className="form-user-container div-shadow">
           <div className="close" onClick={handleUserCloseClick}>
             x
           </div>

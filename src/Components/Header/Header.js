@@ -8,7 +8,7 @@ const Header = () => {
   const { dataCss, handleUserButtonClick, savedUser } = useContext(MyContext);
 
   return (
-    <header style={{background: dataCss.primaryColor}} className="header">
+    <header style={{background: dataCss.primaryColor, boxShadow: dataCss.boxShadowHeader}} className="header">
       <Hamburger />
       <figure className='logo-container'>
         <picture>

@@ -29,7 +29,9 @@ function App() {
   const [userName, setUserName] = useState('');
   const [userKey, setUserKey] = useState();
   const [savedUser, setSavedUser] = useState('user');
-  const [savedKey, setSavedKey] = useState('clique em User Key e gere sua key e não compatilhe');
+  const [savedKey, setSavedKey] = useState(
+    'clique em User Key e gere sua key e não compatilhe'
+  );
   const [showError, setshowError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('Error');
   const [showPersonaForm, setShowPersonaForm] = useState(false);
@@ -39,33 +41,36 @@ function App() {
     profession: '',
     humor: '',
     local: '',
-    descriptionPersona: ''
-  })
+    descriptionPersona: '',
+  });
   const personaBot = {
     personaName: 'Easy IA',
     profession: 'é um chatbot',
     humor: '',
     local: '',
-    descriptionPersona: 'Eu sou um chatbot, sou uma ferramenta de integração ao uso de Inteligência Artificial, facilitando de forma intuitiva a vida do usuário no uso de IA no dia à dia ',
+    descriptionPersona:
+      'Eu sou um chatbot, sou uma ferramenta de integração ao uso de Inteligência Artificial, facilitando de forma intuitiva a vida do usuário no uso de IA no dia à dia ',
   };
   const [personaList, setPersonaList] = useState([]);
-  
+
   const keyUser = `Bearer ${savedKey}`;
-  const systemContent = `Você é ${personaBot.personaName}`
-  
-  const [persona, setPersona] = useState(personaBot)
+  const systemContent = `Você é ${personaBot.personaName}`;
+
+  const [persona, setPersona] = useState(personaBot);
 
   const promptPersona = `responda inicialmente com o seguinte padrão abaixo,
       'Nome o personagem' : 'Fala do personagem'
        exemplo: ${persona.personaName} : Oi tudo bem?
     Com base nessas informações sobre o personagem ${persona.personaName}, que é ${persona.profession}, e também nas informações que vc tem no seu banco de dados desse personagem, simule uma resposta desse personagem, seja fiel ao personagem.
     Informações do personagem: ${persona.descriptionPersona}
-    Por favor chat, simula uma resposta para essa pergunta, leve em consideração que, ${persona.humor} , ${persona.local}.`
+    Por favor chat, simula uma resposta para essa pergunta, leve em consideração que, ${persona.humor} , ${persona.local}.`;
 
   const dataCss = {
     primaryColor: '#212121',
     secundaryColor: '#bfbfbf',
     fontColor: '#f0f0f0',
+    boxShadowHeader: 'inset 0 -10px 10px -10px rgba(255, 255, 255, 0.15)',
+    boxShadowFooter: 'inset 0 10px 10px -10px rgba(255, 255, 255, 0.15)',
     logoImage: [
       './img/easy-ia-logo.png',
       './img/easy-ia-logo.webp',
@@ -93,9 +98,8 @@ function App() {
     }
     return () => clearTimeout(timer);
   }, [showMessage]);
-  
 
-// funções do chat, butão de envio
+  // funções do chat, butão de envio
   const sendMessage = async () => {
     setLoading(true);
     try {
@@ -174,7 +178,7 @@ function App() {
     }
   };
 
-// Funções configuração do chat, temperatura, frequencia, presença, respostas, tokens
+  // Funções configuração do chat, temperatura, frequencia, presença, respostas, tokens
   const handleFrequencyChange = (event) => {
     const newFrequency = parseFloat(event.target.value);
     setFrequency(newFrequency);
@@ -229,7 +233,7 @@ function App() {
   const handleInputContextChange = (event) => {
     setContextPrompt(event.target.value);
   };
-  
+
   // funções tela User, user e key
   const handleUserButtonClick = () => {
     setshowUserForm(true);
@@ -263,75 +267,95 @@ function App() {
     setshowError(false);
   };
 
-// funções persona, name, descrição, humor, local, obs
-const handlePersonaButtonClick = () => {
-  if(showPersonaForm) {
-    setShowPersonaForm(false)
-  } else if (!showPersonaForm) {
-    setShowPersonaForm(true)
-  }
-};
-
-const handlePersonaCloseClick = () => {
-  setShowPersonaForm(false);
-};
-
-const handleSubmitPersona = (event) => {
-  event.preventDefault();
-  const newPersona = {
-    personaName: personaForm.personaName,
-    profession: personaForm.profession,
-    humor: personaForm.humor,
-    local: personaForm.local,
-    descriptionPersona: personaForm.descriptionPersona,
+  // funções persona, name, descrição, humor, local, obs
+  const handlePersonaButtonClick = () => {
+    if (showPersonaForm) {
+      setShowPersonaForm(false);
+    } else if (!showPersonaForm) {
+      setShowPersonaForm(true);
+    }
   };
-  setPersonaList([...personaList, newPersona]);
-  setPersonaForm({
-    personaName: '',
-    profession: '',
-    humor: '',
-    local: '',
-    descriptionPersona: ''
-  });
-  localStorage.setItem('personaList', JSON.stringify([...personaList, newPersona]));
-  handlePersonaCloseClick();
-};
 
-const handlePersonaListButtonClick = () => {
-  setShowPersonaList(true);
-};
+  const handlePersonaCloseClick = () => {
+    setShowPersonaForm(false);
+  };
 
-const handlePersonaListCloseClick = () => {
-  setShowPersonaList(false);
-};
+  const handleSubmitPersona = (event) => {
+    event.preventDefault();
+    const newPersona = {
+      personaName: personaForm.personaName,
+      profession: personaForm.profession,
+      humor: personaForm.humor,
+      local: personaForm.local,
+      descriptionPersona: personaForm.descriptionPersona,
+    };
+    setPersonaList([...personaList, newPersona]);
+    setPersonaForm({
+      personaName: '',
+      profession: '',
+      humor: '',
+      local: '',
+      descriptionPersona: '',
+    });
+    localStorage.setItem(
+      'personaList',
+      JSON.stringify([...personaList, newPersona])
+    );
+    handlePersonaCloseClick();
+  };
 
-const handleDeletePersona = (index) => {
-  const updatedPersonaList = [...personaList];
-  updatedPersonaList.splice(index, 1);
-  setPersonaList(updatedPersonaList);
-  localStorage.setItem('personaList', JSON.stringify(updatedPersonaList));
-};
+  const handlePersonaListButtonClick = () => {
+    setShowPersonaList(true);
+  };
 
-const handleChosenPersona = (index, isPersonaBot) => {
-  const selectedPersona = personaList[index];
-  isPersonaBot ? setPersona(personaBot) : setPersona(selectedPersona);
-  setShowPersonaForm(false);
-  setShowPersonaList(false);
-};
+  const handlePersonaListCloseClick = () => {
+    setShowPersonaList(false);
+  };
 
-const handleEditPersona = (index) => {
-  const selectedPersona = personaList[index];
-  setPersonaForm(selectedPersona)
-  setShowPersonaList(false);
-};
+  const handleDeletePersona = (index) => {
+    const updatedPersonaList = [...personaList];
+    updatedPersonaList.splice(index, 1);
+    setPersonaList(updatedPersonaList);
+    localStorage.setItem('personaList', JSON.stringify(updatedPersonaList));
+  };
 
-useEffect(() => {
-  const storedPersonaList = localStorage.getItem('personaList');
-  if (storedPersonaList) {
-    setPersonaList(JSON.parse(storedPersonaList));
-  }
-}, []);
+  const handleChosenPersona = (index, isPersonaBot) => {
+    const selectedPersona = personaList[index];
+    isPersonaBot ? setPersona(personaBot) : setPersona(selectedPersona);
+    setShowPersonaForm(false);
+    setShowPersonaList(false);
+  };
 
+  const handleEditPersona = (index) => {
+    const selectedPersona = personaList[index];
+    setPersonaForm(selectedPersona);
+    setShowPersonaList(false);
+  };
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    const storedPersonaList = localStorage.getItem('personaList');
+    if (storedPersonaList) {
+      setPersonaList(JSON.parse(storedPersonaList));
+    }
+    const handleEscDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+        setShowPersonaForm(false);
+        setShowPersonaList(false);
+        handleUserCloseClick();
+      }
+    };
+    document.addEventListener('keydown', handleEscDown);
+    return () => {
+      document.removeEventListener('keydown', handleEscDown);
+    };
+  }, []);
 
   const sharedData = {
     dataCss,
@@ -360,6 +384,7 @@ useEffect(() => {
     personaForm,
     personaList,
     showPersonaList,
+    isOpen,
     setUserKey,
     setUserName,
     sendMessage,
@@ -389,7 +414,8 @@ useEffect(() => {
     handlePersonaListCloseClick,
     handleDeletePersona,
     handleChosenPersona,
-    handleEditPersona
+    handleEditPersona,
+    handleCheckboxChange,
   };
 
   return (

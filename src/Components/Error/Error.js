@@ -4,7 +4,7 @@ import './Error.css';
 const Error = ({text}) => {
     
   return (
-    <div className="container-error">
+    <div className="container-error div-shadow">
       {text}
     </div>
   );

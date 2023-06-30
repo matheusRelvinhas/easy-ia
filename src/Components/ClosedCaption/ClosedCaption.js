@@ -4,7 +4,7 @@ import './ClosedCaption.css';
 const ClosedCaption = ({text}) => {
     
   return (
-    <span className="tooltip">
+    <span className="tooltip div-shadow">
       {text}
     </span>
   );

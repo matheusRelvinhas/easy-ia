@@ -16,7 +16,7 @@ const PersonaList = () => {
   return (
     <>
       {showPersonaList && (
-        <div className="persona-list-container">
+        <div className="persona-list-container div-shadow">
           <div className="close" onClick={handlePersonaListCloseClick}>
             x
           </div>

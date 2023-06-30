@@ -67,6 +67,7 @@
   height: 100%;
   resize: none;
   font-size: larger;
+  padding: 2px 8px 2px 8px;
 }
 
 .code-block {

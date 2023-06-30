@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import Frequency from '../Frequency/Frequency';
 import Presence from '../Presence/Presence';
 import NumberAnswers from '../NumberAnswers/NumberAnswers';
@@ -10,13 +10,8 @@ import './Hamburger.css';
 import ContextPrompt from '../ContextPrompt/ContextPrompt';
 
 const Hamburger = () => {
-  const { dataCss } = useContext(MyContext);
 
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleCheckboxChange = () => {
-    setIsOpen(!isOpen);
-  };
+  const { dataCss, isOpen, handleCheckboxChange } = useContext(MyContext);
 
   return (
     <div className="tab-itens">
@@ -36,7 +31,7 @@ const Hamburger = () => {
         </svg>
       </label>
       {isOpen && (
-        <div style={{backgroundColor: dataCss.primaryColor}} className="tab-content">
+        <div style={{backgroundColor: dataCss.primaryColor}} className="tab-content div-shadow">
           <div className="tab-itens">
             <Temperature />
             <Frequency />
