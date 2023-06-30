@@ -6,7 +6,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #50505050;
-  color: #101010;
 }
 
 html, body {
@@ -21,7 +20,75 @@ a, Link {
 
 * {
   font-family: 'Courier New', Courier, monospace;
-  font-size:medium;
+  font-size:large;
+  color: #f0f0f0;
+}
+
+button {
+  position: relative;
+  border: 3px ridge #003eb3;
+  outline: none;
+  background-color: #212121;
+  transition: 1s;
+  border-radius: 0.3em;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  transition: 0.5s;
+  transform-origin: center;
+}
+
+button::before {
+  content: "";
+  transform-origin: center;
+  position: absolute;
+  top: 80%;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  transition: 0.5s;
+}
+
+button:hover::before, button:hover::after {
+  transform: scale(0)
+}
+
+button:hover {
+  box-shadow: inset 0px 0px 22.5px #003eb3;
+}
+
+input {
+  border-radius: 5px;
+  height: 5vh;
+  min-height: 25px;
+  width: 85%;
+  font-size: larger;
+  background-color: #212121 ;
+  color: #f0f0f0 ;
+  border-color: #f0f0f0;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 7.5px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #f0f0f0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #555555;
 }
 
 /* Largura e cor da barra de rolagem */
@@ -33,7 +100,7 @@ a, Link {
 /* Cor do indicador da barra de rolagem */
 ::-webkit-scrollbar-thumb {
   background-color: #555555;
-  border-radius: 3.5px;
+  border-radius: 3px;
 }
 
 /* Cor do indicador da barra de rolagem quando hover */

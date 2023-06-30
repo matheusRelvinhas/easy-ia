@@ -1,0 +1,32 @@
+.form-persona-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  left: 5%;
+  top: 10.5%;
+  text-align: center;
+  align-items: center;
+  background-color: #212121;
+  border-radius: 5px;
+  height: 67vh;
+  width: 90%;
+  padding: 4px 0;
+}
+
+.form-persona {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.button-persona-form {
+  height: 6vh;
+  width: 30vw;
+  min-width: 135px;
+  max-width: 300px;
+  min-height: 30px;
+}

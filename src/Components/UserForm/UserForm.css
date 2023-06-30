@@ -1,0 +1,66 @@
+.form-user-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  left: 25%;
+  top: 16.66%;
+  text-align: center;
+  align-items: center;
+  background-color: #212121;
+  border-radius: 5px;
+  height: 55vh;
+  width: 50%;
+  padding: 4px 0;
+}
+
+.form-user-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.form-user-key {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.error-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  left: 20%;
+  top: 25%;
+  text-align: center;
+  align-items: center;
+  background-color: #212121;
+  border-radius: 5px;
+  height: 25vh;
+  width: 60%;
+  padding: 4px 0;
+}
+
+.user-key {
+  position: relative;
+  display: grid;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center
+}
+
+.button-user {
+  height: 6vh;
+  width: 30vw;
+  min-width: 120px;
+  max-width: 300px;
+  min-height: 30px;
+}

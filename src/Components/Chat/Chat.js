@@ -1,31 +1,20 @@
 import React, { useContext } from 'react';
+import ReactMarkdown from 'react-markdown';
 import MyContext from '../../Context/MyContext';
-import ClosedCaption from '../ClosedCaption/ClosedCaption';
 import Loading from '../Loading/Loading';
 import './Chat.css';
 
 const Chat = () => {
   const {
-    chatMessages,
-    loading,
-    handleSubmit,
-    handleInputChange,
     prompt,
-    showMessage,
+    chatMessages,
+    handleInputChange,
     handleKeyDown,
-    showUserForm,
-    handleUserCloseClick,
-    userName,
-    savedUser,
-    setUserName,
-    handleSubmitUser,
-    userKey,
-    savedKey,
-    setUserKey,
-    handleSubmitKey,
-    showError,
-    errorMessage,
-    handleErrorCloseClick,
+    handleSubmit,
+    loading,
+    showMessage,
+    handlePersonaButtonClick,
+    personaBot,
   } = useContext(MyContext);
 
   return (
@@ -33,16 +22,21 @@ const Chat = () => {
       <div className="chat-container">
         <div className="chat-messages">
           {chatMessages.map((message, index) => {
-            const isChatBotMessage = message.startsWith('ChatBot');
+            const isChatBotMessage = message.startsWith(personaBot.personaName);
             const messageContainerClass = isChatBotMessage
               ? 'chat-message-container chat-box-message-container'
               : 'chat-message-container';
             const messageClass = isChatBotMessage
               ? 'chat-message chat-bot-message'
               : 'chat-message';
+            if (message.startsWith(personaBot.personaName)) {
+              message = message.substring(`${personaBot.personaName}:`.length);
+            }
             return (
               <div className={messageContainerClass} key={index}>
-                <pre className={messageClass}>{message}</pre>
+                <pre className={messageClass}>
+                  <ReactMarkdown>{message}</ReactMarkdown>
+                </pre>
               </div>
             );
           })}
@@ -62,87 +56,22 @@ const Chat = () => {
           required
           onChange={handleInputChange}
         />
-        <div className="sidebar"></div>
-        <button className="btn-header" id='btn-submit-form' type="submit">
-          <strong>Send</strong>
-          <div id="container-stars-header">
-            <div id="stars-header"></div>
-          </div>
-          <div id="glow-header">
-            <div className="circle-header"></div>
-            <div className="circle-header"></div>
-          </div>
-        </button>
+        <div className="button-chat-container" >
+          <button
+            className="button-persona"
+            type="button"
+            onClick={handlePersonaButtonClick}
+          >
+            <span>Persona</span>
+          </button>
+          <button className="button-chat" type="submit">
+            <span>Send</span>
+          </button>
+        </div>
       </form>
       {showMessage && (
         <div className="message-container">
           <div className="message-text">Escreva algo</div>
-        </div>
-      )}
-      {showUserForm && (
-        <div className="form-user-container">
-          <div className="close" onClick={handleUserCloseClick}>
-            x
-          </div>
-          <form className="form-user-name" onSubmit={handleSubmitUser}>
-            <label>
-              <strong>User Name</strong>
-            </label>
-            <input
-              type="text"
-              value={userName}
-              onChange={(event) => setUserName(event.target.value)}
-              placeholder={savedUser}
-              required
-            />
-            <button className="btn-header" type="submit">
-              <strong>Send user name</strong>
-              <div id="container-stars-header">
-                <div id="stars-header"></div>
-              </div>
-              <div id="glow-header">
-                <div className="circle-header"></div>
-                <div className="circle-header"></div>
-              </div>
-            </button>
-          </form>
-          <form className="form-user-key" onSubmit={handleSubmitKey}>
-            <label className="user-key">
-              <ClosedCaption text="" />
-              <a
-                href="https://platform.openai.com/account/api-keys"
-                target="blank"
-              >
-                <strong>User Key</strong>
-              </a>
-              <ClosedCaption text="Click no link e gere sua key, será salva em local storage, não compartilhe com ninguém, se tiver com problemas na key gera uma nova no link e atualize aqui" />
-            </label>
-            <input
-              type="text"
-              value={userKey}
-              onChange={(event) => setUserKey(event.target.value)}
-              placeholder={savedKey}
-              required
-            />
-            <button className="btn-header" type="submit">
-              <strong>Send user key</strong>
-              <div id="container-stars-header">
-                <div id="stars-header"></div>
-              </div>
-              <div id="glow-header">
-                <div className="circle-header"></div>
-                <div className="circle-header"></div>
-              </div>
-            </button>
-          </form>
-        </div>
-      )}
-      {showError && (
-        <div className="error-container">
-          <div className="close" onClick={handleErrorCloseClick}>
-            x
-          </div>
-          <span>{errorMessage}</span>
         </div>
       )}
     </div>

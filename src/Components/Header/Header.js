@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header style={{background: dataCss.primaryColor}} className="header">
       <Hamburger />
-      <figure>
+      <figure className='logo-container'>
         <picture>
           <source src={dataCss.logoImage[3]} type="image/webp" />
           <source src={dataCss.logoImage[2]} type="image/png" />
@@ -20,15 +20,8 @@ const Header = () => {
         </picture>
       </figure>
       <div className='user'>
-        <button className="btn-header" onClick={handleUserButtonClick}>
-          <strong>{savedUser}</strong>
-          <div id="container-stars-header">
-            <div id="stars-header"></div>
-          </div>
-          <div id="glow-header">
-            <div className="circle-header"></div>
-            <div className="circle-header"></div>
-          </div>
+        <button className="button-header" onClick={handleUserButtonClick}>
+          <span>{savedUser}</span>
         </button>
       </div>
     </header>
