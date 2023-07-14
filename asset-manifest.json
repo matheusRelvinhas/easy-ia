@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/easy-ia/static/css/main.3478ed33.css",
-    "main.js": "/easy-ia/static/js/main.429f998d.js",
+    "main.js": "/easy-ia/static/js/main.650179c0.js",
     "index.html": "/easy-ia/index.html",
     "main.3478ed33.css.map": "/easy-ia/static/css/main.3478ed33.css.map",
-    "main.429f998d.js.map": "/easy-ia/static/js/main.429f998d.js.map"
+    "main.650179c0.js.map": "/easy-ia/static/js/main.650179c0.js.map"
   },
   "entrypoints": [
     "static/css/main.3478ed33.css",
-    "static/js/main.429f998d.js"
+    "static/js/main.650179c0.js"
   ]
 }
