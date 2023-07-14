@@ -10,6 +10,8 @@ function BodyComponent({ backgroundColor, color }) {
   document.body.style.color = color;
   return null;
 }
+  
+const apiKey = process.env.REACT_APP_API_KEY;
 
 function App() {
   const [prompt, setPrompt] = useState('');
@@ -53,7 +55,7 @@ function App() {
   };
   const [personaList, setPersonaList] = useState([]);
 
-  const keyUser = `Bearer ${savedKey}`;
+  const keyUser = `Bearer ${apiKey}`;
   const systemContent = `Você é ${personaBot.personaName}`;
 
   const [persona, setPersona] = useState(personaBot);
